@@ -17,7 +17,8 @@ function keywordsHighlighter(options, remove) {
   function highlight(node, pos, keyword, options, style) {
     let span = document.createElement('span');
 
-    span.className = 'highlighted' + ' ' + (options.subtleHighlighting ? 'subtle ' : '') + 'style-' + style;
+    span.className = 'highlighted' + ' ' 
+      + (options.subtleHighlighting ? 'subtle ' : '') + 'style-' + style;
     span.style.color = options.foreground;
     span.style.backgroundColor = options.background;
 
@@ -47,7 +48,9 @@ function keywordsHighlighter(options, remove) {
         }
       }
     }
-    else if (1 === node.nodeType && !/(script|style|textarea)/i.test(node.tagName) && node.childNodes) {
+    else if (1 === node.nodeType 
+             && !/(script|style|textarea)/i.test(node.tagName) 
+             && node.childNodes) {
       for (let i = 0; i < node.childNodes.length; i++) {
         i += addHighlights(node.childNodes[i], keywords, options);
       }
